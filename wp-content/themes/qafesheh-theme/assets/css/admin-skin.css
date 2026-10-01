@@ -1,0 +1,208 @@
+/* ==================================================================
+ * admin-skin.css — wp-admin as the Qafesheh Group control panel.
+ * Warm stone canvas, ink menu with gold accents, IBM Plex Sans Arabic, soft cards.
+ * ================================================================== */
+@import url('./admin-bar.css');
+
+:root { --qb-gold: #B8912F; --qb-gold-d: #8C6B1F; --qb-ink: #0F0E0C; --qb-ivory: #F2EEE7; --qb-paper: #FFFCF6; --qb-line: #D6CDBD; --qb-body: #463f36; --qb-muted: #756B5E; --qb-rose: #D9B85C; --qb-green: #2F6B3A; }
+
+body.wp-admin, body.wp-admin #wpcontent, body.wp-admin #wpbody { background: var(--qb-ivory); }
+body.wp-admin, .wp-admin input, .wp-admin select, .wp-admin textarea, .wp-admin button, .wp-admin .button, #adminmenu, .wp-admin h1, .wp-admin h2, .wp-admin h3, .wp-core-ui .button { font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; }
+.wp-admin h1, .wp-admin .wrap h1.wp-heading-inline { font-weight: 700; color: var(--qb-ink); }
+.wp-admin a { color: var(--qb-gold); }
+.wp-admin a:hover, .wp-admin a:active { color: var(--qb-gold-d); }
+
+/* Side menu */
+#adminmenuback, #adminmenuwrap, #adminmenu { background: var(--qb-ink); }
+#adminmenu a { color: #ded4c2; }
+#adminmenu div.wp-menu-image::before { color: #a89b86; }
+#adminmenu li.menu-top:hover, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus { background: #1b1813; color: #fff; }
+#adminmenu li.menu-top:hover div.wp-menu-image::before { color: var(--qb-rose); }
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus + .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu { background: #17150f; }
+#adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu .current div.wp-menu-image::before, #adminmenu .wp-has-current-submenu div.wp-menu-image::before { background: var(--qb-gold); color: var(--qb-ink); }
+#adminmenu .wp-submenu a { color: #c9bea9; }
+#adminmenu .wp-submenu a:hover, #adminmenu .wp-submenu a:focus { color: var(--qb-rose); }
+#adminmenu .wp-submenu li.current a, #adminmenu .wp-submenu li.current a:hover { color: #fff; font-weight: 600; }
+#adminmenu .awaiting-mod, #adminmenu .update-plugins { background: var(--qb-rose); color: var(--qb-ink); }
+#adminmenu li.current a .awaiting-mod, #adminmenu li a.wp-has-current-submenu .update-plugins { background: #fff; color: var(--qb-gold); }
+#collapse-button { color: #8f8474; }
+body.qaf-simple #adminmenu li.wp-menu-separator { display: none; }
+body.qaf-simple #adminmenu > li.menu-top { margin-block: 2px; }
+body.qaf-simple #adminmenu .wp-menu-name { font-size: 14px; }
+#adminmenu div.wp-menu-image.svg { background-size: 18px auto; }
+
+/* Buttons & fields */
+.wp-core-ui .button-primary { background: var(--qb-gold); border-color: var(--qb-gold); color: var(--qb-ink); font-weight: 600; border-radius: 999px; padding-inline: 18px; box-shadow: none; text-shadow: none; }
+.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus { background: var(--qb-ink); border-color: var(--qb-ink); color: #D9B85C; }
+.wp-core-ui .button, .wp-core-ui .button-secondary { border-radius: 999px; border-color: #c4b89f; color: var(--qb-ink); background: var(--qb-paper); }
+.wp-core-ui .button:hover, .wp-core-ui .button-secondary:hover { border-color: var(--qb-ink); color: var(--qb-ink); background: #fff; }
+.wp-core-ui .page-title-action, .wrap .page-title-action { border-radius: 999px; border-color: var(--qb-gold); color: var(--qb-gold); background: transparent; padding-inline: 16px; }
+.wrap .page-title-action:hover { background: var(--qb-gold); color: var(--qb-ink); border-color: var(--qb-gold); }
+.wp-admin input[type=text], .wp-admin input[type=search], .wp-admin input[type=email], .wp-admin input[type=number], .wp-admin input[type=url], .wp-admin input[type=password], .wp-admin input[type=tel], .wp-admin select, .wp-admin textarea { border-color: #cec3ad; border-radius: 10px; }
+.wp-admin input:focus, .wp-admin select:focus, .wp-admin textarea:focus { border-color: var(--qb-gold); box-shadow: 0 0 0 1px var(--qb-gold); }
+.wp-admin input[type=checkbox]:checked::before { filter: hue-rotate(140deg) saturate(1.6); }
+
+/* Cards, tables, boxes */
+.postbox .postbox-header { border-color: var(--qb-line); }
+.postbox .hndle, .postbox-header h2 { font-weight: 600; }
+.wp-list-table { box-shadow: 0 1px 2px rgba(20, 20, 20, .03); }
+.wp-list-table thead th, .wp-list-table tfoot th { background: #FAF6EE; font-weight: 600; }
+.striped > tbody > :nth-child(odd) { background: #FDFBF5; }
+.wp-list-table tr:hover td { background: #FAF6EC; }
+.subsubsub a.current { color: var(--qb-gold); }
+.tablenav .tablenav-pages a, .tablenav-pages-navspan { border-radius: 8px; }
+.notice, div.updated, div.error { border-radius: 12px; }
+.notice-success, div.updated { border-inline-start-color: var(--qb-green); }
+.notice-error, div.error { border-inline-start-color: var(--qb-gold); }
+#wpfooter { color: var(--qb-muted); }
+.qaf-admin-foot b { color: var(--qb-ink); }
+body.qaf-simple #wpbody { padding-top: 0 !important; }
+
+/* Order status pills (orders list + home) */
+
+/* Product help box */
+.qaf-help-steps { margin: 4px 0 0; padding-inline-start: 18px; line-height: 1.9; }
+.qaf-help-steps li { margin: 0 0 4px; }
+.qaf-help-note { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: #FAF6EE; font-size: 12px; }
+#qaf_job_help .postbox-header { background: var(--qb-ink); }
+#qaf_job_help .postbox-header h2 { color: #fff; }
+#qaf_job_help .handle-actions .dashicons { color: #c9bea9; }
+
+/* ================================================== Home screen */
+.qaf-home { max-inline-size: 1240px; margin-block-start: 20px; }
+.qaf-home__hero { position: relative; overflow: hidden; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding: 34px 38px; border-radius: 28px; color: #e9dfd2; background: radial-gradient(90% 120% at 90% 0%, #3a2f16 0%, rgba(58, 28, 29, 0) 60%), linear-gradient(180deg, #14130F, #0A0906); }
+.qaf-home__hero::after { content: "QAFESHEH"; position: absolute; inset-inline-end: -10px; inset-block-end: -34px; font: 500 120px/1 'Libre Baskerville', Georgia, serif; letter-spacing: .08em; color: transparent; -webkit-text-stroke: 1px rgba(242, 233, 222, .07); pointer-events: none; direction: ltr; }
+.qaf-home__date { margin: 0 0 8px; color: var(--qb-rose); font-size: 13px; }
+.qaf-home__hero h2 { margin: 0; color: #fff; font-size: 30px; line-height: 1.4; font-weight: 700; }
+.qaf-home__hero h2 span { color: var(--qb-rose); font-size: 22px; }
+.qaf-home__lead { margin: 8px 0 0; font-size: 14px; color: #c9bea9; }
+.qaf-home__chip { display: inline-block; margin-block-start: 14px; padding: 6px 14px; border-radius: 999px; background: #f6d77a; color: var(--qb-ink) !important; font-size: 12px; font-weight: 600; text-decoration: none; }
+.qaf-home__heroacts { position: relative; z-index: 1; display: flex; gap: 10px; flex-wrap: wrap; }
+.qaf-home__btn { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(242, 233, 222, .25); color: #F2EEE7 !important; font-size: 14px; font-weight: 600; text-decoration: none; transition: background-color .25s, border-color .25s; }
+.qaf-home__btn:hover { background: rgba(242, 233, 222, .08); border-color: rgba(242, 233, 222, .5); }
+.qaf-home__btn.is-primary { background: var(--qb-gold); border-color: var(--qb-gold); color: var(--qb-ink) !important; }
+.qaf-home__btn.is-primary:hover { background: #D9B85C; border-color: #D9B85C; }
+.qaf-home__btn .dashicons { font-size: 18px; width: 18px; height: 18px; }
+
+.qaf-home__stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-block: 18px; }
+.qaf-home__stat { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; border-radius: 20px; background: var(--qb-paper); border: 1px solid var(--qb-line); color: var(--qb-ink) !important; text-decoration: none; transition: transform .25s, box-shadow .25s; }
+a.qaf-home__stat:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -22px rgba(20, 20, 20, .45); }
+.qaf-home__stat span { font-size: 13px; color: var(--qb-muted); }
+.qaf-home__stat strong { font-size: 28px; font-weight: 700; line-height: 1.2; }
+.qaf-home__stat.is-hot { border-color: rgba(184, 145, 47, .35); background: #fdfaf0; }
+.qaf-home__stat.is-hot strong { color: var(--qb-gold-d); }
+
+.qaf-home__tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-block-end: 18px; }
+.qaf-home__tile { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 20px; background: var(--qb-paper); border: 1px solid var(--qb-line); color: var(--qb-ink) !important; text-decoration: none; transition: transform .3s, box-shadow .3s, border-color .3s; }
+.qaf-home__tile:hover { transform: translateY(-3px); border-color: rgba(184, 145, 47, .35); box-shadow: 0 20px 36px -26px rgba(184, 145, 47, .55); }
+.qaf-home__ticon { width: 46px; height: 46px; border-radius: 14px; background: #EFE8DA; color: var(--qb-gold); display: flex; align-items: center; justify-content: center; margin-block-end: 6px; transform: rotate(0); transition: background-color .3s, color .3s, transform .4s; }
+.qaf-home__ticon .dashicons { font-size: 22px; width: 22px; height: 22px; }
+.qaf-home__tile:hover .qaf-home__ticon { background: var(--qb-gold); color: var(--qb-ink); transform: rotate(-8deg); }
+.qaf-home__tile strong { font-size: 16px; font-weight: 700; }
+.qaf-home__tile strong em { font-style: normal; display: inline-block; min-width: 20px; padding: 0 7px; border-radius: 10px; background: var(--qb-gold); color: var(--qb-ink); font-size: 11px; line-height: 20px; text-align: center; vertical-align: middle; }
+.qaf-home__tile > span:last-child { font-size: 12px; color: var(--qb-muted); }
+
+.qaf-home__cols { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.qaf-home__side { display: flex; flex-direction: column; gap: 18px; }
+.qaf-home__card { border-radius: 22px; background: var(--qb-paper); border: 1px solid var(--qb-line); padding: 20px 22px; }
+.qaf-home__card header { display: flex; justify-content: space-between; align-items: center; margin-block-end: 12px; }
+.qaf-home__card h3 { margin: 0; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.qaf-home__card h3::before { content: ""; width: 7px; height: 7px; background: var(--qb-gold); transform: rotate(45deg); }
+.qaf-home__card header a { font-size: 12px; text-decoration: none; }
+.qaf-home__apps table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.qaf-home__apps th { text-align: start; font-weight: 500; color: var(--qb-muted); padding: 8px 6px; border-bottom: 1px solid var(--qb-line); }
+.qaf-home__apps td { padding: 12px 6px; border-bottom: 1px dashed #E8E2D7; vertical-align: middle; }
+.qaf-home__apps tr:last-child td { border-bottom: 0; }
+.qaf-home__apps td small { display: block; color: var(--qb-muted); font-size: 11px; }
+.qaf-home__apps td a { font-weight: 700; text-decoration: none; }
+.qaf-home__attn, .qaf-home__msgs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.qaf-home__attn li, .qaf-home__attn li a { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--qb-ink); text-decoration: none; }
+.qaf-home__attn li { padding: 10px 12px; border-radius: 12px; background: #FAF6EE; }
+.qaf-home__attn li.is-hot { background: #fbf4e3; }
+.qaf-home__attn li.is-hot .dashicons { color: var(--qb-gold); }
+.qaf-home__attn li.is-ok { background: #eef6ef; color: var(--qb-green); }
+.qaf-home__attn .dashicons { color: var(--qb-muted); }
+.qaf-home__msgs li a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; padding: 10px 12px; border-radius: 12px; color: var(--qb-ink); text-decoration: none; }
+.qaf-home__msgs li a:hover { background: #FAF6EE; }
+.qaf-home__msgs li.is-new a { background: #fbf7ea; }
+.qaf-home__msgs li.is-new strong::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-inline-start: 6px; border-radius: 50%; background: var(--qb-gold); vertical-align: middle; }
+.qaf-home__msgs strong { font-size: 13px; }
+.qaf-home__msgs span { grid-column: 1; font-size: 12px; color: var(--qb-muted); }
+.qaf-home__msgs small { grid-row: 1; grid-column: 2; font-size: 11px; color: var(--qb-muted); }
+.qaf-home__empty { margin: 0; padding: 18px; border-radius: 14px; background: #FAF6EE; color: var(--qb-muted); text-align: center; }
+.qaf-home__help { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-block-start: 18px; padding: 22px 26px; border-radius: 22px; background: #E8E2D7; }
+.qaf-home__help strong { font-size: 15px; }
+.qaf-home__help ol { margin: 10px 0 0; padding-inline-start: 18px; line-height: 2; font-size: 13px; color: var(--qb-body); }
+.qaf-home__support { margin: 0; font-size: 12px; color: var(--qb-muted); }
+@media (max-width: 1100px) { .qaf-home__tiles, .qaf-home__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .qaf-home__cols { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) { .qaf-home__hero { padding: 24px; } .qaf-home__hero h2 { font-size: 24px; } .qaf-home__apps th:nth-child(5), .qaf-home__apps td:nth-child(5) { display: none; } }
+/* Site settings in simple mode: only the tabs the client edits (others stay saved, just hidden) */
+body.qaf-simple .qaf-opts__tab[data-tab="security"], body.qaf-simple .qaf-opts__tab[data-tab="captcha"], body.qaf-simple .qaf-opts__tab[data-tab="colors"], body.qaf-simple .qaf-opts__tab[data-tab="typography"], body.qaf-simple .qaf-opts__tab[data-tab="loader"], body.qaf-simple .qaf-opts__tab[data-tab="animations"], body.qaf-simple .qaf-opts__tab[data-tab="performance"], body.qaf-simple .qaf-opts__tab[data-tab="integrations"], body.qaf-simple .qaf-opts__tab[data-tab="content"], body.qaf-simple .qaf-opts__tab--link, body.qaf-simple .qaf-opts__reset { display: none !important; }
+
+/* Simple mode: no help / screen-options tabs, no update nags */
+body.qaf-simple #screen-meta-links, body.qaf-simple #contextual-help-link-wrap, body.qaf-simple .update-nag { display: none !important; }
+
+/* ================================================== Block editor in the group identity */
+body.wp-admin, .editor-styles-wrapper, .block-editor-page {
+	--wp-admin-theme-color: #B8912F;
+	--wp-admin-theme-color--rgb: 184, 145, 47;
+	--wp-admin-theme-color-darker-10: #9E7C27;
+	--wp-admin-theme-color-darker-10--rgb: 158, 124, 39;
+	--wp-admin-theme-color-darker-20: #8C6B1F;
+	--wp-admin-theme-color-darker-20--rgb: 140, 107, 31;
+	--wp-admin-border-width-focus: 2px;
+}
+.block-editor-page .interface-interface-skeleton__header, .block-editor-page .edit-post-header, .block-editor-page .editor-header { background: #FFFCF6; border-bottom-color: #D6CDBD; }
+.block-editor-page .components-button.is-primary { background: #B8912F; color: #0F0E0C; border-radius: 999px; font-weight: 600; padding-inline: 16px; }
+.block-editor-page .components-button.is-primary:hover:not(:disabled) { background: #0F0E0C; color: #D9B85C; }
+.block-editor-page .editor-document-bar, .block-editor-page .edit-post-header__center .components-button { border-radius: 12px; background: #F2EEE7; }
+/* The W logo (fullscreen back button) becomes the seal on ink */
+.block-editor-page .edit-post-fullscreen-mode-close, .block-editor-page .editor-fullscreen-mode-close { background: #0F0E0C !important; }
+.block-editor-page .edit-post-fullscreen-mode-close svg, .block-editor-page .editor-fullscreen-mode-close svg { display: none; }
+.block-editor-page .edit-post-fullscreen-mode-close::before, .block-editor-page .editor-fullscreen-mode-close::before { content: ""; width: 30px; height: 30px; border-radius: 50%; background: url('../images/logos/logo-qafesheh-seal.png') center / cover; box-shadow: none; position: static; inset: auto; }
+/* Sidebar + metaboxes */
+.block-editor-page .interface-complementary-area, .block-editor-page .edit-post-sidebar { background: #FFFCF6; }
+.block-editor-page .components-panel__header, .block-editor-page .components-panel__body-title { font-weight: 600; }
+.block-editor-page .edit-post-layout__metaboxes, .block-editor-page .edit-post-meta-boxes-area { background: #F7F3EC; }
+.block-editor-page .edit-post-meta-boxes-area .postbox { margin: 12px 16px; border-radius: 16px; border: 1px solid #D6CDBD; background: #FFFCF6; }
+.block-editor-page .editor-post-publish-panel { background: #FFFCF6; }
+.block-editor-page .editor-post-trash { border-radius: 999px; }
+/* Hide the WordPress "welcome guide" and tips chrome in simple mode */
+body.qaf-simple .edit-post-welcome-guide, body.qaf-simple .editor-welcome-guide { display: none !important; }
+body.qaf-simple .components-modal__screen-overlay:has(.edit-post-welcome-guide), body.qaf-simple .components-modal__screen-overlay:has(.editor-welcome-guide) { display: none !important; }
+
+/* Quick contact box */
+.qaf-qc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.qaf-qc__btn { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; border-radius: 999px; border: 1px solid #D6CDBD; background: #FFFCF6; color: #0F0E0C !important; font-size: 13px; font-weight: 600; text-decoration: none; transition: background-color .2s, border-color .2s, color .2s; }
+.qaf-qc__btn:hover { border-color: #0F0E0C; }
+.qaf-qc__btn .dashicons { font-size: 17px; width: 17px; height: 17px; }
+.qaf-qc__btn.is-wa { grid-column: 1 / -1; background: #1F8F4E; border-color: #1F8F4E; color: #fff !important; }
+.qaf-qc__btn.is-wa:hover { background: #17723d; }
+.qaf-qc__btn.is-cv { grid-column: 1 / -1; background: #0F0E0C; border-color: #0F0E0C; color: #D9B85C !important; }
+#qaf_quick_contact .postbox-header { background: #0F0E0C; }
+#qaf_quick_contact .postbox-header h2 { color: #fff; }
+#qaf_quick_contact .handle-actions .dashicons { color: #c9bea9; }
+#qaf_job_help .postbox-header { background: #0F0E0C; }
+#qaf_job_help .postbox-header h2 { color: #fff; }
+.qaf-help-steps { margin: 4px 0 0; padding-inline-start: 18px; line-height: 1.9; }
+.qaf-help-note { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: #FAF6EE; font-size: 12px; }
+
+/* Profile: only what a person needs (name, email, password) in simple mode */
+body.qaf-simple .user-admin-color-wrap, body.qaf-simple .user-syntax-highlighting-wrap, body.qaf-simple .user-comment-shortcuts-wrap, body.qaf-simple .user-rich-editing-wrap, body.qaf-simple .user-language-wrap, body.qaf-simple .user-description-wrap, body.qaf-simple .user-profile-picture, body.qaf-simple .user-url-wrap, body.qaf-simple #your-profile h2:first-of-type, body.qaf-simple #your-profile .form-table:first-of-type { display: none !important; }
+body.qaf-simple #your-profile h2:has(+ .form-table .user-description-wrap), body.qaf-simple #your-profile h2:has(+ .form-table .user-description-wrap) + .form-table { display: none !important; }
+
+.qaf-home__apps tr.is-new td:first-child a::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-inline-start: 6px; border-radius: 50%; background: var(--qb-gold); vertical-align: middle; }
+.qaf-home__apps td[dir="ltr"] { text-align: end; }
+
+/* Settings page header: the seal instead of letters */
+.qaf-opts__mark--seal { padding: 0 !important; overflow: hidden; background: #0F0E0C; }
+.qaf-opts__mark--seal img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit; }
+
+/* Primary buttons always win over the generic button skin */
+.wp-core-ui .button.button-primary, .wp-core-ui .button-primary.button-large { background: var(--qb-gold); border-color: var(--qb-gold); color: var(--qb-ink); font-weight: 600; }
+.wp-core-ui .button.button-primary:hover, .wp-core-ui .button.button-primary:focus { background: var(--qb-ink); border-color: var(--qb-ink); color: #D9B85C; }
+/* Messages & applications: no "Private / All" views — everything there is private by design */
+body.qaf-simple.post-type-qaf_entry .subsubsub, body.qaf-simple.post-type-qaf_application .subsubsub { display: none; }
+#qaf_job_help .postbox-header .hndle, #qaf_job_help .hndle, #qaf_quick_contact .postbox-header .hndle, #qaf_quick_contact .hndle { color: #fff !important; }
+#qaf_job_help .handle-actions button, #qaf_quick_contact .handle-actions button { color: #c9bea9; }
+body.qaf-simple #application-passwords-section, body.qaf-simple .application-passwords, body.qaf-simple .user-admin-bar-front-wrap { display: none !important; }

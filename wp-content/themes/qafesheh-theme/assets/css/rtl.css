@@ -1,0 +1,80 @@
+/* ==================================================================
+ * rtl.css — only what logical properties cannot flip:
+ * transform origins, directional icons, gradient angles, clip reveals,
+ * and Arabic typography (no letter tracking on Arabic, taller line-height).
+ * Loaded when is_rtl().
+ * ================================================================== */
+
+:root {
+	--qaf-dir: -1;
+	--qaf-origin-start: right;
+	--qaf-origin-end: left;
+	--qaf-lh-h: 1.6;
+	--qaf-lh-b: 2;
+	--qaf-track-label: 0;
+}
+
+/* Directional icons */
+.qaf-icon--arrow { scale: -1 1; }
+.qaf-flip.qaf-icon--arrow,
+.qaf-postnav__item--prev .qaf-icon--arrow { scale: 1 1; }
+
+/* Clip reveals start from the right */
+.qaf-loader__name { clip-path: inset(0 0 0 100%); }
+
+/* Arabic typography — tracking breaks letter joining */
+.qaf-rail__label,
+.qaf-footer__title,
+.qaf-topbar,
+.qaf-crumbs { letter-spacing: 0; word-spacing: .12em; }
+.qaf-hero__title { line-height: 1.55; }
+.qaf-statement__title { line-height: 1.8; }
+.qaf-h2 { line-height: 1.6; }
+.qaf-brand__title { line-height: 1.25; }
+.qaf-svc__title { line-height: 1.45; }
+.qaf-cta__title { line-height: 1.55; }
+.qaf-banner__title { line-height: 1.45; }
+.qaf-mobile__list > li > a { line-height: 1.6; }
+
+/* Gradients that encode a direction */
+.qaf-hero__shade { background: linear-gradient(105deg, rgba(var(--qaf-ink-rgb), .34) 0%, rgba(var(--qaf-ink-rgb), .9) 58%, rgba(var(--qaf-ink-rgb), .97) 100%); }
+.qaf-banner__shade { background: linear-gradient(105deg, rgba(var(--qaf-ink-rgb), calc(var(--qaf-banner-overlay, .84) - .45)) 0%, rgba(var(--qaf-ink-rgb), var(--qaf-banner-overlay, .84)) 55%, rgba(var(--qaf-ink-rgb), .97) 100%); }
+.qaf-btn::before { background: linear-gradient(-105deg, transparent 30%, rgba(255, 255, 255, .34) 50%, transparent 70%); transform: translateX(120%); }
+.qaf-btn:hover::before { transform: translateX(-120%); }
+.qaf-brand__media::after { transform: translateX(110%); background: linear-gradient(-115deg, transparent 35%, rgba(255, 255, 255, .12) 50%, transparent 65%); }
+.qaf-brand:hover .qaf-brand__media::after { transform: translateX(-110%); }
+.qaf-mobile__panel { background: radial-gradient(90% 60% at 0% 0%, rgba(var(--qaf-primary-rgb), .1), transparent 60%), var(--qaf-ink); }
+.qaf-lines { background-position: calc(100% / 6 * 5) 0; }
+
+@media (max-width: 900px) {
+	.qaf-hero__shade { background: linear-gradient(0deg, rgba(var(--qaf-ink-rgb), .97) 22%, rgba(var(--qaf-ink-rgb), .78) 60%, rgba(var(--qaf-ink-rgb), .5) 100%); }
+}
+
+/* v2.1 */
+:root { --qaf-grad-end: left; }
+.qaf-foil { background-image: linear-gradient(-100deg, var(--qaf-primary-dark) 0%, #d9b75c 38%, var(--qaf-primary) 62%, #e7cd7f 80%, var(--qaf-primary-dark) 100%); background-position: 0 0; }
+.qaf-foil.qaf-in, html:not(.qaf-js) .qaf-foil { background-position: 100% 0; }
+.qaf-kicker, .qaf-cocontact__label, .qaf-side__label { letter-spacing: 0; }
+.qaf-cohero__shade, .qaf-phero__shade { background: linear-gradient(105deg, rgba(var(--qaf-ink-rgb), .42) 0%, rgba(var(--qaf-ink-rgb), .95) 64%); }
+.qaf-goldcta { background-image: linear-gradient(-100deg, var(--qaf-primary-dark) 0%, #d9b75c 42%, var(--qaf-primary) 100%); }
+.qaf-cointro__title, .qaf-cocats__title, .qaf-svcrow__title { line-height: 1.55; }
+.qaf-brmap__badge { padding: 12px 16px 12px 14px; }
+@media (max-width: 900px) {
+	.qaf-cohero__shade, .qaf-phero__shade { background: linear-gradient(0deg, rgba(var(--qaf-ink-rgb), .97) 34%, rgba(var(--qaf-ink-rgb), .55) 100%); }
+}
+
+/* v2.2 */
+.qaf-field select { background-position: 18px 50%, 23px 50%; }
+.qaf-jfilters__open::before { background: radial-gradient(260px circle at 0% 0%, rgba(var(--qaf-primary-rgb), .18), transparent 70%); }
+.qaf-pmeta { letter-spacing: 0; }
+.qaf-featured__badge, .qaf-jobhead__tag { letter-spacing: 0; }
+.qaf-ahead__title, .qaf-featured__title, .qaf-acard__title { line-height: 1.7; }
+.qaf-prose--article blockquote::before { content: "“"; }
+
+/* v2.3 */
+.qaf-timeline__track { background: repeating-linear-gradient(to left, rgba(var(--qaf-primary-rgb), .45) 0 8px, transparent 8px 15px); }
+.qaf-phero__ghost { inset-inline-end: -30px; }
+
+/* v2.4 hero slider */
+.qaf-hero__arrow .qaf-icon--arrow { scale: -1 1; }
+.qaf-hero__arrow .qaf-flip.qaf-icon--arrow { scale: 1 1; }

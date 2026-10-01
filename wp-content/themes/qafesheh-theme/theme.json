@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"color": { "custom": false, "customGradient": false, "defaultPalette": false, "defaultGradients": false,
+			"palette": [
+				{ "slug": "gold", "color": "#B8912F", "name": "Gold" },
+				{ "slug": "ink", "color": "#0F0E0C", "name": "Ink" },
+				{ "slug": "stone", "color": "#F2EEE7", "name": "Stone" },
+				{ "slug": "stone-2", "color": "#E8E2D7", "name": "Stone 2" }
+			]
+		},
+		"typography": { "customFontSize": false, "defaultFontSizes": false, "fontFamilies": [] },
+		"layout": { "contentSize": "820px", "wideSize": "1304px" },
+		"spacing": { "padding": false, "margin": false }
+	},
+	"styles": {}
+}

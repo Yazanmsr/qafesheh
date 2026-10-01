@@ -1,0 +1,122 @@
+/*! QB Captcha 1.0.0 — themable through the --qbc-* custom properties. */
+.qb-captcha{
+	--qbc-accent:var(--qaf-ink,#0F0E0C);
+	--qbc-gold:var(--qaf-accent,#B8912F);
+	--qbc-ink:var(--qaf-ink,#0F0E0C);
+	--qbc-muted:var(--qaf-body,#463f36);
+	--qbc-line:rgba(0,62,59,.16);
+	--qbc-bg:#FFFDF8;
+	--qbc-danger:#A8322B;
+	--qbc-radius:18px;
+	--qbc-ease:cubic-bezier(.22,1,.36,1);
+	--qbc-font:var(--qaf-font-b,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif);
+	position:relative;
+	margin:4px 0 18px;
+	font-family:var(--qbc-font);
+	color:var(--qbc-ink);
+	-webkit-tap-highlight-color:transparent;
+}
+.qb-captcha *,.qb-captcha *::before,.qb-captcha *::after{box-sizing:border-box}
+
+/* ----------------------------------------------------------- Checkbox card */
+.qbc-card{
+	all:unset;
+	box-sizing:border-box;
+	display:flex;align-items:center;gap:14px;
+	inline-size:100%;max-inline-size:380px;
+	padding:12px 16px 12px 14px;
+	background:var(--qbc-bg);
+	border:1px solid var(--qbc-line);
+	border-radius:var(--qbc-radius);
+	box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 24px -20px rgba(0,38,36,.55);
+	cursor:pointer;
+	transition:border-color .5s var(--qbc-ease),box-shadow .5s var(--qbc-ease),transform .5s var(--qbc-ease),background-color .5s var(--qbc-ease);
+}
+.qbc-card:hover{border-color:rgba(0,62,59,.32);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 16px 30px -22px rgba(0,38,36,.6)}
+.qbc-card:active{transform:scale(.985)}
+.qbc-card:focus-visible{outline:2px solid var(--qbc-gold);outline-offset:3px}
+.is-done .qbc-card{cursor:default;border-color:rgba(0,62,59,.28);background:linear-gradient(100deg,rgba(201,164,92,.10),var(--qbc-bg) 55%)}
+
+/* The box: square → spinning ring → green seal with a drawn tick. */
+.qbc-box{
+	position:relative;flex:none;
+	inline-size:30px;block-size:30px;
+	border-radius:9px;
+	border:1.5px solid rgba(0,62,59,.38);
+	background:#fff;
+	transition:border-radius .6s var(--qbc-ease),border-color .4s,background-color .5s var(--qbc-ease),transform .6s var(--qbc-ease),box-shadow .6s var(--qbc-ease);
+}
+.qbc-card:hover .qbc-box{border-color:var(--qbc-accent);box-shadow:0 0 0 5px rgba(0,62,59,.06)}
+.qbc-box svg{position:absolute;inset:-4px;inline-size:36px;block-size:36px;overflow:visible}
+.qbc-ring{fill:none;stroke:var(--qbc-gold);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:100.5;stroke-dashoffset:100.5;transform-origin:18px 18px;opacity:0;transition:opacity .3s}
+.qbc-tick{fill:none;stroke:#F7F1E1;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:22;stroke-dashoffset:22}
+.is-busy .qbc-box{border-radius:50%;border-color:transparent;background:rgba(201,164,92,.08);transform:scale(.92)}
+.is-busy .qbc-ring{opacity:1;animation:qbc-spin 1.1s linear infinite,qbc-dash 1.4s var(--qbc-ease) infinite}
+.is-done .qbc-box{border-radius:50%;border-color:var(--qbc-accent);background:var(--qbc-accent);transform:scale(1);box-shadow:0 0 0 6px rgba(201,164,92,.18);animation:qbc-pop .7s var(--qbc-ease)}
+.is-done .qbc-tick{transition:stroke-dashoffset .55s .12s var(--qbc-ease);stroke-dashoffset:0}
+@keyframes qbc-spin{to{transform:rotate(360deg)}}
+@keyframes qbc-dash{0%{stroke-dashoffset:95}50%{stroke-dashoffset:30}100%{stroke-dashoffset:95}}
+@keyframes qbc-pop{0%{box-shadow:0 0 0 0 rgba(201,164,92,.45)}100%{box-shadow:0 0 0 6px rgba(201,164,92,.18)}}
+
+.qbc-copy{display:flex;flex-direction:column;gap:2px;min-inline-size:0;flex:1}
+.qbc-label{font-size:15px;font-weight:600;letter-spacing:.005em;line-height:1.25;color:var(--qbc-ink);transition:color .4s}
+.is-done .qbc-label{color:var(--qbc-accent)}
+.qbc-sub{font-size:11.5px;line-height:1.35;color:var(--qbc-muted);opacity:.85}
+.qbc-brand{
+	display:flex;flex-direction:column;align-items:center;gap:3px;flex:none;
+	padding-inline-start:14px;border-inline-start:1px solid var(--qbc-line);
+	font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--qbc-muted);white-space:nowrap
+}
+.qbc-brand .qbc-shield{inline-size:20px;block-size:20px;color:var(--qbc-accent)}
+
+/* Shield icon tick */
+.qbc-shield__tick{stroke-dasharray:12;stroke-dashoffset:0;transition:stroke-dashoffset .5s var(--qbc-ease)}
+.qb-captcha--invisible:not(.is-done) .qbc-shield__tick{stroke-dashoffset:12}
+
+/* ----------------------------------------------------------- Invisible line */
+.qbc-quiet{
+	display:flex;align-items:center;gap:8px;margin:0;
+	font-size:12px;line-height:1.45;color:var(--qbc-muted);
+	transition:color .5s var(--qbc-ease)
+}
+.qbc-quiet .qbc-shield{flex:none;color:var(--qbc-gold);transition:color .5s var(--qbc-ease),transform .6s var(--qbc-ease)}
+.qbc-quiet a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.qb-captcha--invisible.is-busy .qbc-shield{animation:qbc-breathe 1.2s ease-in-out infinite}
+.qb-captcha--invisible.is-done .qbc-quiet{color:var(--qbc-accent)}
+.qb-captcha--invisible.is-done .qbc-shield{color:var(--qbc-accent);transform:scale(1.08)}
+@keyframes qbc-breathe{50%{transform:scale(.86);opacity:.6}}
+
+/* ----------------------------------------------------------- Third-party slot */
+.qbc-slot:empty{display:none}
+.qb-captcha--checkbox .qbc-slot{min-block-size:65px;max-inline-size:380px}
+.qb-captcha--recaptcha.qb-captcha--checkbox .qbc-slot > div{border-radius:6px;overflow:hidden}
+.qb-captcha--recaptcha.qb-captcha--invisible ~ * .grecaptcha-badge,.grecaptcha-badge{visibility:hidden!important}
+.qb-captcha--turnstile.qb-captcha--invisible .qbc-slot:not(:empty){margin-block-end:8px}
+
+/* ----------------------------------------------------------- Feedback */
+.qbc-msg{margin:8px 2px 0;font-size:12.5px;line-height:1.4;color:var(--qbc-danger);animation:qbc-fade .4s var(--qbc-ease)}
+.qbc-msg[hidden]{display:none}
+.is-error .qbc-card{border-color:rgba(168,50,43,.45);box-shadow:0 0 0 4px rgba(168,50,43,.07)}
+.is-nudge{animation:qbc-nudge .55s var(--qbc-ease)}
+@keyframes qbc-nudge{15%{transform:translateX(-6px)}35%{transform:translateX(5px)}55%{transform:translateX(-3px)}75%{transform:translateX(2px)}}
+@keyframes qbc-fade{from{opacity:0;transform:translateY(-3px)}}
+.qbc-noscript{margin:6px 0 0;font-size:12.5px;color:var(--qbc-danger)}
+form.qbc-checking [type="submit"]{cursor:progress}
+
+/* ----------------------------------------------------------- WordPress login screen */
+.login .qb-captcha--wp{margin:2px 0 18px}
+.login .qb-captcha--wp .qbc-card{max-inline-size:none}
+.login .qb-captcha--wp .qbc-brand{display:none}
+.login #lostpasswordform .qb-captcha--wp,.login #registerform .qb-captcha--wp{margin-top:6px}
+.comment-form .qb-captcha{inline-size:100%}
+
+/* ----------------------------------------------------------- Small screens */
+@media (max-width:420px){
+	.qbc-card{gap:12px;padding:11px 12px}
+	.qbc-brand{padding-inline-start:10px}
+	.qbc-brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+	.qb-captcha *,.qb-captcha{animation:none!important;transition:none!important}
+	.is-busy .qbc-ring{stroke-dashoffset:40}
+}

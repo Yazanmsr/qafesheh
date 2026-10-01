@@ -1,0 +1,18 @@
+/* Admin bar in the Qafesheh Group identity (admin + site) */
+#wpadminbar { background: #0F0E0C; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif !important; }
+#wpadminbar .ab-item, #wpadminbar .ab-label, #wpadminbar .display-name, #wpadminbar a, #wpadminbar span:not(.ab-icon):not(.dashicons) { font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif !important; }
+#wpadminbar .ab-icon, #wpadminbar .ab-icon::before, #wpadminbar .dashicons, #wpadminbar .dashicons::before, #wpadminbar .ab-item::before { font-family: dashicons !important; }
+#wpadminbar .ab-item, #wpadminbar a.ab-item, #wpadminbar > #wp-toolbar span.ab-label, #wpadminbar > #wp-toolbar span.noticon { color: #e9dfd2; }
+#wpadminbar .ab-top-menu > li.hover > .ab-item, #wpadminbar .ab-top-menu > li > .ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item { background: #2a1d1d; color: #fff; }
+#wpadminbar .menupop .ab-sub-wrapper { background: #1f1717; }
+#wpadminbar .quicklinks .menupop ul li a { color: #e9dfd2; }
+#wpadminbar .quicklinks .menupop ul li a:hover { color: #D9B85C; }
+#wpadminbar #wp-admin-bar-qaf-brand > .ab-item { display: flex; align-items: center; gap: 8px; padding-inline: 12px 14px; font-weight: 700; color: #fff; }
+.qaf-ab-mark { display: inline-block; inline-size: 18px; block-size: 18px; background: center / contain no-repeat; }
+.qaf-ab-name { font-size: 14px; }
+#wpadminbar #wp-admin-bar-qaf-orders .ab-icon::before, #wpadminbar #wp-admin-bar-qaf-new .ab-icon::before { color: #D9B85C; top: 3px; }
+.qaf-ab-count { display: inline-block; min-inline-size: 18px; padding: 0 6px; border-radius: 9px; background: #B8912F; color: #fff; font-size: 11px; line-height: 18px; text-align: center; }
+.qaf-ab-dev { color: #f6d77a; }
+#wpadminbar #wp-admin-bar-site-name > .ab-item::before, #wpadminbar #wp-admin-bar-my-sites > .ab-item::before { display: none; }
+#wpadminbar #wp-admin-bar-site-name { display: none; }
+#wpadminbar .qaf-ab-svg { display: inline-block; vertical-align: middle; }
