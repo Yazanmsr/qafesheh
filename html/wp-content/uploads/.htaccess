@@ -1,0 +1,16 @@
+
+# BEGIN مجموعة قفيشة Security
+# التعليمات (الأسطر) بين "BEGIN مجموعة قفيشة Security" و "END مجموعة قفيشة Security"
+# تم إنشاؤها ديناميكيًا، ويجب تعديلها فقط من خلال مرشحات ووردبريس (WordPress Filters).
+# أي تغييرات على التعليمات بين هذه العلامات سيتم الكتابة فوقها.
+# Built by the مجموعة قفيشة theme: no scripts can run from uploads.
+<FilesMatch "\.(php|php[0-9]|phtml|phar|pht|phps|pl|py|cgi|sh|asp|aspx|jsp)$">
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order allow,deny
+		Deny from all
+	</IfModule>
+</FilesMatch>
+# END مجموعة قفيشة Security

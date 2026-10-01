@@ -1,0 +1,67 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">qaf_company</custom-type>
+		<custom-type translate="1">qaf_service</custom-type>
+		<custom-type translate="1">qaf_branch</custom-type>
+		<custom-type translate="1">qaf_job</custom-type>
+		<custom-type translate="0">qaf_entry</custom-type>
+		<custom-type translate="0">qaf_application</custom-type>
+	</custom-types>
+	<taxonomies>
+		<taxonomy translate="1">qaf_brand</taxonomy>
+		<taxonomy translate="1">qaf_service_cat</taxonomy>
+		<taxonomy translate="1">qaf_job_dept</taxonomy>
+		<taxonomy translate="1">qaf_job_loc</taxonomy>
+		<taxonomy translate="1">qaf_job_type</taxonomy>
+	</taxonomies>
+	<custom-fields>
+		<custom-field action="copy">_qaf_color</custom-field>
+		<custom-field action="copy">_qaf_logo</custom-field>
+		<custom-field action="copy">_qaf_logo_dark</custom-field>
+		<custom-field action="copy">_qaf_img_pos</custom-field>
+		<custom-field action="copy">_qaf_icon</custom-field>
+		<custom-field action="copy">_qaf_phone</custom-field>
+		<custom-field action="copy">_qaf_lat</custom-field>
+		<custom-field action="copy">_qaf_lng</custom-field>
+		<custom-field action="copy">_qaf_factory</custom-field>
+		<custom-field action="copy">_qaf_banner_off</custom-field>
+		<custom-field action="copy">_qaf_banner_image</custom-field>
+		<custom-field action="copy-once">_qaf_shop_url</custom-field>
+		<custom-field action="copy-once">_qaf_map_url</custom-field>
+		<custom-field action="translate">_qaf_en_name</custom-field>
+		<custom-field action="translate">_qaf_sector</custom-field>
+		<custom-field action="translate">_qaf_specialty</custom-field>
+		<custom-field action="translate">_qaf_markets</custom-field>
+		<custom-field action="translate">_qaf_points</custom-field>
+		<custom-field action="translate">_qaf_short</custom-field>
+		<custom-field action="translate">_qaf_city</custom-field>
+		<custom-field action="translate">_qaf_address</custom-field>
+		<custom-field action="translate">_qaf_hours</custom-field>
+		<custom-field action="translate">_qaf_dept</custom-field>
+		<custom-field action="translate">_qaf_location</custom-field>
+		<custom-field action="translate">_qaf_type</custom-field>
+		<custom-field action="translate">_qaf_deadline</custom-field>
+		<custom-field action="translate">_qaf_experience</custom-field>
+		<custom-field action="translate">_qaf_tasks</custom-field>
+		<custom-field action="translate">_qaf_reqs</custom-field>
+		<custom-field action="copy">_qaf_closed</custom-field>
+		<custom-field action="translate">_qaf_banner_title</custom-field>
+		<custom-field action="translate">_qaf_banner_sub</custom-field>
+		<custom-field action="copy">_qaf_gallery</custom-field>
+		<custom-field action="copy">_qaf_catalog</custom-field>
+		<custom-field action="copy">_qaf_email</custom-field>
+		<custom-field action="copy">_qaf_instagram</custom-field>
+		<custom-field action="copy">_qaf_facebook</custom-field>
+		<custom-field action="copy">_qaf_youtube</custom-field>
+		<custom-field action="translate">_qaf_tagline</custom-field>
+		<custom-field action="translate">_qaf_intro_t</custom-field>
+		<custom-field action="translate">_qaf_categories</custom-field>
+		<custom-field action="translate">_qaf_quote_t</custom-field>
+		<custom-field action="translate">_qaf_quote</custom-field>
+		<custom-field action="translate">_qaf_short</custom-field>
+		<custom-field action="translate">_qaf_includes</custom-field>
+		<custom-field action="translate">_qaf_steps</custom-field>
+		<custom-field action="ignore">_qaf_import_key</custom-field>
+		<custom-field action="ignore">_qaf_import_hash</custom-field>
+	</custom-fields>
+</wpml-config>
